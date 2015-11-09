@@ -13,7 +13,7 @@ express or implied. See the License for the specific language governing
 permissions and limitations under the License.
 """
 
-from kcl import RecordProcessor, RecordProcessorBase, JSONRecordProcessor, KCLProcess
+from kcl import RecordProcessor, RecordProcessorBase, KCLProcess
 
 def start(record_processor):
     """

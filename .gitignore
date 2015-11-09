@@ -1,2 +1,5 @@
 *.iml
 .idea/
+
+MANIFEST
+dist/

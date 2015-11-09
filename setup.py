@@ -16,7 +16,7 @@ permissions and limitations under the License.
 from distutils.core import setup
 
 PACKAGE_NAME = 'kclpy'
-PACKAGE_VERSION = '0.1.0'
+PACKAGE_VERSION = '0.1.1'
 
 if __name__ == '__main__':
     setup(
@@ -25,7 +25,9 @@ if __name__ == '__main__':
         description='A python interface for the Amazon Kinesis Client Library MultiLangDaemon',
         license='Amazon Software License',
         packages=[PACKAGE_NAME],
+        author='jonson',
+        author_email='jon@empiricalresults.com',
         url='https://github.com/empiricalresults/kclpy',
-        download_url='https://github.com/empiricalresults/kclpy/tarball/0.1.0',
+        download_url='https://github.com/empiricalresults/kclpy/archive/0.1.1.tar.gz',
         keywords=['amazon', 'kinesis', 'kinesis-client-library', 'client-library', 'library'],
-        )
+    )
