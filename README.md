@@ -27,7 +27,7 @@ class MyStreamProcessor(kclpy.RecordProcessor):
     def process_record(self, data, partition_key, sequence_number):
 
         try:
-            # assumes the incoming kinesis record is java
+            # assumes the incoming kinesis record is json
             data = json.loads(data)
             user = data.get("user")
             
