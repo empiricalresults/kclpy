@@ -438,10 +438,15 @@ class RecordProcessor(RecordProcessorBase):
                 seq = int(seq)
                 key = record.get('partitionKey')
                 explicit_checkpoint = self.process_record(data, key, seq) is True
+
+                if explicit_checkpoint:
+                    self.checkpoint(checkpointer, str(seq))
+
                 self.records_processed += 1
                 if self.largest_seq is None or seq > self.largest_seq:
                     self.largest_seq = seq
-            should_checkpoint = explicit_checkpoint or self.should_checkpoint()
+
+            should_checkpoint = self.should_checkpoint()
             if should_checkpoint:
                 self.checkpoint(checkpointer, str(self.largest_seq))
         except Exception as e:
