@@ -16,7 +16,7 @@ permissions and limitations under the License.
 from distutils.core import setup
 
 PACKAGE_NAME = 'kclpy'
-PACKAGE_VERSION = '0.1.2'
+PACKAGE_VERSION = '0.2.0'
 
 if __name__ == '__main__':
     setup(
@@ -30,4 +30,8 @@ if __name__ == '__main__':
         url='https://github.com/empiricalresults/kclpy',
         download_url='https://github.com/empiricalresults/kclpy/archive/0.1.2.tar.gz',
         keywords=['amazon', 'kinesis', 'kinesis-client-library', 'client-library', 'library'],
+        classifiers=[
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.5",
+        ]
     )

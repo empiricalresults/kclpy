@@ -21,6 +21,7 @@ import logging
 
 log = logging.getLogger('kclpy')
 
+
 class _IOHandler(object):
     """
     Hidden class used by :class:`KCLProcess` and :class:`Checkpointer` to communicate with the input and output
@@ -152,6 +153,7 @@ class Checkpointer(object):
             '''
             raise CheckpointError('InvalidStateException')
 
+
 # RecordProcessor base class
 class RecordProcessorBase(object):
     """
@@ -209,11 +211,13 @@ class RecordProcessorBase(object):
         """
         return
 
+
 class MalformedAction(Exception):
     """
     Raised when an action given by the MultiLangDaemon doesn't have all the appropriate attributes.
     """
     pass
+
 
 class KCLProcess(object):
 
@@ -270,7 +274,7 @@ class KCLProcess(object):
             up further. We will mimic the KCL and pass over client errors. We print their stack trace to STDERR to
             help them notice and debug this type of issue.
             '''
-            log.exception("Unhandled erro while processing MultiLangDaemon message")
+            log.exception("Unhandled errof while processing MultiLangDaemon message")
 
     def _report_done(self, response_for=None):
         """
@@ -298,6 +302,8 @@ class KCLProcess(object):
         """
         Starts this KCL processor's main loop.
         """
+
+        log.info("Starting kcl processor, using stdin/stdout for communication")
 
         line = True
         '''
